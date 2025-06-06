@@ -43,6 +43,7 @@ const SignUp = () => {
            * fullName, email e createdAt são os campos que estamos salvando
            * createdAt é a data de criação do usuário, que estamos definindo como a data atual
            */
+          getDoc = doc(db, 'usuarios', user.uid);
           await setDoc(doc(db, 'users', user.uid), {
             fullName,
             email,

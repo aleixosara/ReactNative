@@ -1,6 +1,3 @@
-# academico-react-native
-
-##
 academico-react-native
 aula01 - js_intro/aula01
 Configuração de ambiente
@@ -12,6 +9,8 @@ Sintaxe Básica: variáveis (const, let, var), operadores (matemáticos, lógico
 Funções: Funções normais, funções anônimas e funções de flecha (arrow functions).
 Tipos de Dados: strings, números, booleanos, arrays, objetos.
 Estruturas de Controle: loops (for, while), condições (if, else), operadores lógicos e relacionais.
+
+# academico-react-native
 
 Branches
 
