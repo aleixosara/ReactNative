@@ -1,14 +1,11 @@
-# Use Node com Alpine para leveza
-FROM node:18-alpine
+# Usar uma imagem base com Node.js
+FROM node:18
 
-# Define diretório dentro do container
-WORKDIR /app
+# Definir o diretório de trabalho dentro do container
+WORKDIR /code
 
-# Copia os arquivos da pasta local 'app/' para dentro do container
-COPY app/package*.json ./
-RUN npm install
-COPY app .
+# Copia os arquivos da raiz para o diretório
+COPY . /code/
 
-EXPOSE 19006 8081 19000
-
-CMD ["npx", "expo", "start", "--web", "--host", "localhost"]
+# Expor a porta (caso precise usar um servidor Node.js)
+EXPOSE 3000
