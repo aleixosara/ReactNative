@@ -73,7 +73,8 @@ const HouseSelection = () => {
        * houseId é o id da casa que o usuário criou, que será usado para associar o usuário à casa.
        * Isso é importante para que o usuário possa acessar a casa que ele criou posteriormente.
        */
-      await updateDoc(doc(db, 'users', user.uid), {
+      getUserDoc = doc(db, 'users', user.uid);
+      await updateDoc(getUserDoc, {
         houseId: houseId,
       });
 

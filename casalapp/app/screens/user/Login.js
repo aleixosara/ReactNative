@@ -42,6 +42,8 @@ const Login = ({ navigation }) => {
         }
         Alert.alert('Erro',message);
       });
+
+      signInWithUser()
   };
 
   return (
