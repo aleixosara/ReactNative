@@ -1,10 +1,6 @@
 IMAGE_NAME=react-app
 APP_DIR=app
 
-git:
-	git config --global user.email 20233005742@estudantes.ifpr.edu.br
-	git config --global user.name sara aleixo
-
 init-docker:
 	mkdir -p $(APP_DIR)
 	docker run --rm -it -v "$$(pwd)/$(APP_DIR)":/app -w /app node:18-alpine \
@@ -17,11 +13,16 @@ build-docker:
 
 start-docker:
 	docker run -it --rm \
-	  -p 19006:19006 \
-	  -p 19000:19000 \
-	  -p 8081:8081 \
-	  -v "$$(pwd)/$(APP_DIR)":/app \
-	  $(IMAGE_NAME) \
+		-v "$$(pwd)/$(APP_DIR)":/app \
+		-w /app \
+		-p 19000:19000 \
+		-p 19001:19001 \
+		-p 19002:19002 \
+		node:18-alpine sh -c "\
+			apk add --no-cache bash git && \
+			npm install && \
+			npx expo install && \
+			npx expo start --tunnel"
 	
 
 
